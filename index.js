@@ -151,17 +151,18 @@ function findById(movies,id) {
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre(movies,movieGenre) {}
-//   if(!movies.length){
-//     return [];
-//   }
-//   for (let i = 0; i < movies.length; i ++){
-//     if(movies[i].genre === movieGenre && movieGenre.toLowerCase() && movieGenre.toUpperCase()){
-//         return movies[i];
-//       }
-//     }
-//   return [];
-// }
+function filterByGenre(movies,movieGenre) {
+  let genreFilter = [];
+  if(!movies.length){
+    return [];
+  }
+  for (let i = 0; i < movies.length; i ++){
+      if (movies[i].genre.toUpperCase().includes(movieGenre.toUpperCase())){
+        genreFilter.push(movies[i]);
+      }
+    }
+  return genreFilter;
+}
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()

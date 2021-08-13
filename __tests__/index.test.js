@@ -196,7 +196,7 @@ describe("filterByGenre()", () => {
   });
 });
 
-describe.only("getAllMoviesReleasedAtOrBeforeYear()", () => {
+describe("getAllMoviesReleasedAtOrBeforeYear()", () => {
   test("should return all movies where the `released` date is equal to or less than the year given", () => {
     const year = 2000;
     const actual = getAllMoviesReleasedAtOrBeforeYear(movies, year);
