@@ -151,9 +151,17 @@ function findById(movies,id) {
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre(movies,genre) {
-
-}
+function filterByGenre(movies,movieGenre) {}
+//   if(!movies.length){
+//     return [];
+//   }
+//   for (let i = 0; i < movies.length; i ++){
+//     if(movies[i].genre === movieGenre && movieGenre.toLowerCase() && movieGenre.toUpperCase()){
+//         return movies[i];
+//       }
+//     }
+//   return [];
+// }
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
@@ -179,8 +187,9 @@ function filterByGenre(movies,genre) {
  */
 function getAllMoviesReleasedAtOrBeforeYear(movies,year) {
 let releasedMovies = [];
+let released = Number;
   for(let i = 0; i < movies.length; i ++){
-    if(Number(movies[i].released) <= Number(year)){
+    if(movies[i].released <= year){
       releasedMovies.push(movies[i]);
     }
   }
@@ -209,6 +218,7 @@ function getBiggestBoxOfficeMovie(movies) {
       return movies[i].title;
       } 
   }
+  return movies[0].title;
 }
 
 
