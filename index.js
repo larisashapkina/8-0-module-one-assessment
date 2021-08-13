@@ -188,9 +188,9 @@ function filterByGenre(movies,movieGenre) {}
 function getAllMoviesReleasedAtOrBeforeYear(movies,year) {
 let releasedMovies = [];
   for(let i = 0; i < movies.length; i ++){
-    let convertDate = movies[i].release;
-    if(movies[i].released <= year){
-      releasedMovies.push(movies[i].title);
+    let convertDate = Number(movies[i].released.split(' ').splice(2));
+    if(convertDate <= year){
+      releasedMovies.push(movies[i]);
     }
   }
   return releasedMovies;
